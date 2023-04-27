@@ -12,14 +12,12 @@ branches:
         dismiss_stale_reviews: true
         require_code_owner_reviews: false
         dismissal_restrictions: {}
+        code_owner_approval: true
 
       required_status_checks:
         strict: true
         contexts:
-          - build (8)
-          - build (11)
-          - build (14)
-          - license/cla
+          - "DCO"
       enforce_admins: null
 
       required_linear_history: true
