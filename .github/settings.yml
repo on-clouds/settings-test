@@ -5,7 +5,7 @@ repository:
   default_branch: main
   allow_squash_merge: true
   allow_merge_commit: false
-  allow_rebase_merge: false
+  allow_rebase_merge: true
 
   teams:
     - name: "maintainers"
@@ -18,7 +18,7 @@ branches:
       required_pull_request_reviews:
         required_approving_review_count: 1
         dismiss_stale_reviews: true
-        require_code_owner_reviews: false
+        require_code_owner_reviews: true
         dismissal_restrictions: {}
         code_owner_approval: true
         required_conversation_resolution: true
