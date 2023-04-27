@@ -60,6 +60,8 @@ labels:
 # Milestones: define milestones for Issues and Pull Requests
 milestones: []
 
+collaborators: []
+
 # See https://docs.github.com/en/rest/reference/teams#add-or-update-team-repository-permissions for available options
 teams:
   - name: maintainers
@@ -67,7 +69,7 @@ teams:
 
 branches:
   - name: main
-    # https://developer.github.com/v3/repos/branches/#update-branch-protection
+    # https://docs.github.com/en/rest/reference/repos#update-branch-protection
     # Branch Protection settings. Set to null to disable
     protection:
       # Required. Require at least one approving review on a pull request, before merging. Set to null to disable.
@@ -89,8 +91,11 @@ branches:
         # Required. The list of status checks to require in order to merge into this branch
         contexts: []
       # Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable.
-      enforce_admins: false
+      enforce_admins: true
+      # Prevent merge commits from being pushed to matching branches
+      required_linear_history: true
       # Required. Restrict who can push to this branch. Team and user restrictions are only available for organization-owned repositories. Set to null to disable.
       restrictions:
+        apps: []
         users: []
         teams: []
